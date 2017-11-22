@@ -24,8 +24,8 @@ const app = express();
 const users = require('./routes/users');
 
 // Port Number
-const port = process.env.PORT || 8080;
-
+//const port = process.env.PORT || 8080;
+const port=3000;
 // CORS Middleware
 app.use(cors());
 
@@ -41,7 +41,7 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
-app.use('/users', users);
+app.use('/api/users', users);
 
 // Index Route
 app.get('/', (req, res) => {
